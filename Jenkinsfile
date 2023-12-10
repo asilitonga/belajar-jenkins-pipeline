@@ -12,4 +12,22 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            echo "Selalu dijalankan"
+        }
+
+        success {
+            echo "kalau sukses dijalankan"
+        }
+
+        failure {
+            echo "kalau gagal tidak dijalankan"
+        }
+
+        cleanup {
+            echo "ini wajib dijalankan"
+        }
+    }
 }
