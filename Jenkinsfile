@@ -4,11 +4,11 @@ pipeline {
 //terus nanti tinggal panggil aja masing-masing agentnya per stage
 
     parameters {
-        string(name: "name", defaultValue: "Guest", description: "ini paramater string")
-        text(name: "description", defaultValue: "Guest", description: "ini paramater text")
-        booleanParam(name: "deploy", defaultValue: false, description: "ini paramater booleanparam yes or no")
-        choice(name: "socialmedia", choice: ['facebook', 'instagram', 'telegram'], description: "ini paramater choice/combobox")
-        password(name: "secret", defaultValue: "", description: "ini paramater password key")
+        string(name: "NAME", defaultValue: "Guest", description: "ini paramater string")
+        text(name: "DESCRIPTION", defaultValue: "Guest", description: "ini paramater text")
+        booleanParam(name: "DEPLOY", defaultValue: false, description: "ini paramater booleanparam yes or no")
+        choice(name: "SOCIAL_MEDIA", choices: ['facebook', 'instagram', 'telegram'], description: "ini paramater choice/combobox")
+        password(name: "SECRET", defaultValue: "", description: "ini paramater password key")
     }
 
     options {
@@ -26,14 +26,13 @@ pipeline {
             }
         
         steps {
-                echo "text:        ${params.name}"
-                echo "string:      ${params.description}"
-                echo "boolean:     ${params.deploy}"
-                echo "choice:      ${params.socialmedia}"
-                echo "password:    ${params.secret}"
+                echo "text:        ${params.NAME}"
+                echo "string:      ${params.DESCRIPTION}"
+                echo "boolean:     ${params.DEPLOY}"
+                echo "choice:      ${params.SOCIAL_MEDIA}"
+                echo "password:    ${params.SECRET}"
         }
     }
-
 //1
         stage("Prepare") {
             //buat credential dgn env
