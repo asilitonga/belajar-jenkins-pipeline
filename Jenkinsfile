@@ -8,7 +8,7 @@ pipeline {
         text(name: "DESCRIPTION", defaultValue: "Guest", description: "ini paramater text")
         booleanParam(name: "DEPLOY", defaultValue: false, description: "ini paramater booleanparam yes or no")
         choice(name: "SOCIAL_MEDIA", choices: ['facebook', 'instagram', 'telegram'], description: "ini paramater choice/combobox")
-        password(name: "SECRET", defaultValue: "", description: "ini paramater password key")
+        password(name: "PASSWORDNYA", defaultValue: "", description: "ini paramater password key")
     }
 
     options {
@@ -32,7 +32,7 @@ pipeline {
                 echo "text:        ${params.DESCRIPTION}"
                 echo "boolean:     ${params.DEPLOY}"
                 echo "choice:      ${params.SOCIAL_MEDIA}"
-                echo "password:    ${params.SECRET}"
+                echo "password:    ${params.PASSWORDNYA}"
             }
         }
 
