@@ -11,9 +11,9 @@ pipeline {
             }
 
             steps {
-                echo ("Menggunakan brance: ${env.BRANCE_NAME}")
-                echo ("Nama jobnya: ${env.JOB_NAME}")
-                echo ("BUILD NUMBER ${env.BUILD_NUMBER}")
+                echo ("Start Job: ${env.JOB_NAME}")
+                echo ("Start Build: ${env.BUILD_NUMBER}")
+                echo ("Branch Name: ${env.BRANCH_NAME}")
             }
         }
 
