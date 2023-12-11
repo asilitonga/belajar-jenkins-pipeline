@@ -25,14 +25,15 @@ pipeline {
                 }
             }
         
-        steps {
+            steps {
                 echo "text:        ${params.NAME}"
                 echo "string:      ${params.DESCRIPTION}"
                 echo "boolean:     ${params.DEPLOY}"
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.SECRET}"
+            }
         }
-    }
+
 //1
         stage("Prepare") {
             //buat credential dgn env
