@@ -3,6 +3,22 @@ pipeline {
 
     stages {
 //1
+        stage("Prepare") {
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
+
+            steps {
+                echo ("Menggunakan brance: ${BRANCE_NAME}")
+                echo ("Nama jobnya: ${JOB_NAME}")
+                echo ("BUILD NUMBER ${BUILD_NUMBER}")
+            }
+        }
+
+
+//2
         stage("Build") {
             agent {
                 node {
@@ -23,7 +39,7 @@ pipeline {
             }
         }
 
-//2
+//3
         stage("Test") {
             agent {
                 node {
@@ -45,7 +61,7 @@ pipeline {
             }
         }
 
-//3
+//4
         stage("Deploy") {
             agent {
                 node {
