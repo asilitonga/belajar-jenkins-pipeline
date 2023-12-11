@@ -23,9 +23,9 @@ pipeline {
 
         stage("Test") {
             steps {
-                script {
+                steps {
                     def data = [
-                        "firstName": "Andreas"
+                        "firstName": "Andreas",
                         "lastName": "Silitonga"
                     ]
                     writeJSON(file: "data.json", json: data)
