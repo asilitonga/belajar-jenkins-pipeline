@@ -28,7 +28,7 @@ pipeline {
                         "firstname": "Andreas"
                         "lastname": "Silitonga"
                     ]
-                    writeJSON(file : "data.json", json: data)
+                    writeJSON(file: "data.json", json: data)
                 }
 
                 echo ("Start Test")
