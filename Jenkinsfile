@@ -25,7 +25,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo ("Start Deploy")
-                sh ("./mvnw clean compile test-compile")
                 echo ("Finish Deploy")
             }
         }
