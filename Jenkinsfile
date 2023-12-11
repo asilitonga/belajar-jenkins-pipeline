@@ -33,7 +33,7 @@ pipeline {
                 echo "password:    ${params.SECRET}"
             }
         }
-
+    }
 //1
         stage("Prepare") {
             //buat credential dgn env
