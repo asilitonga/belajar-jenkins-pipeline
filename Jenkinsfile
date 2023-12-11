@@ -18,6 +18,8 @@ pipeline {
 
 //buat parameter choice
     stages {
+        
+        //done        
         stage("Parameter") {
             agent {
                 node {
