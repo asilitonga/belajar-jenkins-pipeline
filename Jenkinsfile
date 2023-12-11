@@ -18,6 +18,8 @@ pipeline {
 
 //buat parameter choice
     stages {
+
+
         stage("Parameter") {
             agent {
                 node {
@@ -25,6 +27,7 @@ pipeline {
                 }
             }
         
+            //done
             steps {
                 echo "text:        ${params.NAME}"
                 echo "string:      ${params.DESCRIPTION}"
@@ -33,7 +36,7 @@ pipeline {
                 echo "password:    ${params.SECRET}"
             }
         }
-    }
+
 //1
         stage("Prepare") {
             //buat credential dgn env
