@@ -1,9 +1,17 @@
 pipeline {
     agent none
+//kalau mau buat node agent dijalankan di vm masing" gunakan: agent none diawalnya
+//terus nanti tinggal panggil aja masing-masing agentnya per stage
+
+    options {
+        disableConcurrentBuild()
+        timeout(time: 10, unit: 'MINUTES')
+    }
 
     stages {
 //1
         stage("Prepare") {
+            //buat credential dgn env
             environment {
             //buat fungsinya dulu diawal, baru dibawahnya tinggal panggil fungsinya
                 APP = credentials("secret-asilitonga")
