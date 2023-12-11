@@ -4,6 +4,10 @@ pipeline {
     stages {
 //1
         stage("Prepare") {
+            environment {
+            //buat fungsinya dulu diawal, baru dibawahnya tinggal panggil fungsinya
+                APP = credentials("secret-asilitonga")
+        }            
             agent {
                 node {
                     label "linux && java11"
@@ -14,6 +18,8 @@ pipeline {
                 echo ("Start Job: ${env.JOB_NAME}")
                 echo ("Start Build: ${env.BUILD_NUMBER}")
                 echo ("Branch Name: ${env.BRANCH_NAME}")
+                echo ("Username: ${APP_USR}")
+                sh('echo "Passwordnya: $APP_PSW" > "rahasia.txt"')
             }
         }
 
