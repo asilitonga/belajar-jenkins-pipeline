@@ -28,8 +28,8 @@ pipeline {
             }
         
             steps {
-                echo "text:        ${params.NAME}"
-                echo "string:      ${params.DESCRIPTION}"
+                echo "string:      ${params.NAME}"
+                echo "text:        ${params.DESCRIPTION}"
                 echo "boolean:     ${params.DEPLOY}"
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.SECRET}"
