@@ -44,7 +44,7 @@ pipeline {
         }
     }
 
-
+//ini adalah script fokus pada fungsi
     post {
         always {
             echo "Selalu dijalankan"
