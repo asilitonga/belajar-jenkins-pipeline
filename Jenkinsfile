@@ -19,23 +19,23 @@ pipeline {
 //buat parameter choice
     stages {
 
-
         stage("Parameter") {
             agent {
                 node {
-                    label: "linux && java11"
+                    label "linux && java11"
                 }
             }
         
-            //done
             steps {
+                //done
                 echo "text:        ${params.NAME}"
                 echo "string:      ${params.DESCRIPTION}"
                 echo "boolean:     ${params.DEPLOY}"
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.SECRET}"
-            }
+            }            
         }
+
 
 //1
         stage("Prepare") {
