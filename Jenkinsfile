@@ -6,12 +6,26 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo ("Perkenalkan nama saya adalah Andreas Silitonga")
+                echo ("Hello Build")
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo ("Hello Test")
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo ("Hello Deploy")
             }
         }
     }
+
+    
 
     post {
         always {
