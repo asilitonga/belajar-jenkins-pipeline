@@ -3,13 +3,36 @@ pipeline {
 //kalau mau buat node agent dijalankan di vm masing" gunakan: agent none diawalnya
 //terus nanti tinggal panggil aja masing-masing agentnya per stage
 
+    parameters {
+        string(name: "name", defaultValue: "Guest", description: "ini paramater string")
+        text(name: "description", defaultValue: "Guest", description: "ini paramater text")
+        booleanParam(name: "deploy", defaultValue: false, description: "ini paramater booleanparam yes or no")
+        choice(name: "socialmedia", choices: ['facebook', 'instagram', 'telegram'], description: "ini paramater choice/combobox")
+        password(name: "secret", defaultValue: "", description: "ini paramater password key")
+    }
+
     options {
         disableConcurrentBuilds()
-        timeout(time: 20, unit: 'SECONDS')
+        timeout(time: 10, unit: 'SECONDS')
     }
 
 //buat parameter choice
     stages {
+        stage("Parameter") {
+            agent {
+                node {
+                    label: "linux && java11"
+                }
+            }
+        
+            steps {
+                    echo "text:        ${params.name}"
+                    echo "string:      ${params.description}"
+                    echo "boolean:     ${params.deploy}"
+                    echo "choice:      ${params.socialmedia}"
+                    echo "password:    ${params.secret}"
+            }
+        }
 
 //1
         stage("Prepare") {
