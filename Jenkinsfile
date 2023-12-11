@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage("Build") {
             steps {
 
                 script {
@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage("Test") {
             steps {
                 script {
                     def data = [
@@ -37,7 +37,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage("Deploy") {
             steps {
                 echo ("Start Deploy")
                 echo ("Finish Deploy")
