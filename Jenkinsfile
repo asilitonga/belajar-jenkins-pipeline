@@ -4,7 +4,7 @@ pipeline {
 //terus nanti tinggal panggil aja masing-masing agentnya per stage
 
     options {
-        disableConcurrentBuild()
+        disableConcurrentBuilds()
         timeout(time: 10, unit: 'MINUTES')
     }
 
