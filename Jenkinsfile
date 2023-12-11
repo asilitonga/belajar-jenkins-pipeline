@@ -24,8 +24,7 @@ pipeline {
                     label: "linux && java11"
                 }
             }
-        }
-
+        
         steps {
                 echo "text:        ${params.name}"
                 echo "string:      ${params.description}"
@@ -33,6 +32,7 @@ pipeline {
                 echo "choice:      ${params.socialmedia}"
                 echo "password:    ${params.secret}"
         }
+    }
 
 //1
         stage("Prepare") {
