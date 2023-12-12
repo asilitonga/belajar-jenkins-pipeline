@@ -24,8 +24,19 @@ pipeline {
 
 //buat parameter choice
     stages {
-        
-        //done        
+        stages {
+            stage ("Parameter test 1") {
+                steps {
+                    echo ("ini adalah test 1")
+                }
+            }
+            stage ("Parameter test 1") {
+                steps {
+                    echo ("ini adalah test 1")
+                }
+            }
+        }
+              
         stage("Parameter") {
             agent {
                 node {
@@ -39,20 +50,6 @@ pipeline {
                 echo "boolean:     ${params.DEPLOY}"
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.PASSWORDNYA}"
-            }
-
-            stages {
-                stage ("Parameter test 1") {
-                    steps {
-                        echo ("ini adalah test 1")
-                    }
-                }
-
-                stage ("Parameter test 2") {
-                    steps {
-                        echo ("ini adalah test 2")
-                    }
-                }
             }
         }
 
@@ -77,6 +74,7 @@ pipeline {
                 sh('echo "Passwordnya: $APP_PSW" > "rahasia.txt"')
             }
         }
+
 
 
 //2
