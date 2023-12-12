@@ -147,7 +147,7 @@ pipeline {
             }
 
             steps {
-                echo ("jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK")
+                echo("jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK")
             }
         }
     }
