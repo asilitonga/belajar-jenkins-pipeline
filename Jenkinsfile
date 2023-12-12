@@ -144,9 +144,10 @@ pipeline {
                 node {
                     label "linux && java11"
                 }
+            }
+            
             steps {
                 echo "jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK"
-            }
             }
         }
     }
