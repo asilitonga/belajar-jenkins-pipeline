@@ -116,7 +116,7 @@ pipeline {
                 submitter "asilitonga, papajenkins"
             
                 parameters {
-                    choice(name: "pilihan", choices['DEV', 'QA', 'PROD'], description: "deploy gak?")
+                    choice(name: "pilihan", choices:['DEV', 'QA', 'PROD'], description: "deploy gak?")
                 }
             }
 
