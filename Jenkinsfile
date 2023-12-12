@@ -11,6 +11,12 @@ pipeline {
         password(name: "PASSWORDNYA", defaultValue: "", description: "ini paramater password key")
     }
 
+    //menjalankan pipeline dengan waktu yang ditentukan
+    triggers {
+        pollSCM("*/5 * * * *")
+    }
+
+    //menjalankan pipeline dengan 1 agent saja dengan jeda 40 detik
     options {
         disableConcurrentBuilds()
         timeout(time: 40, unit: 'SECONDS')
