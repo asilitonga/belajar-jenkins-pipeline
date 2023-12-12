@@ -1,7 +1,23 @@
 pipeline {
     agent none
-//kalau mau buat node agent dijalankan di vm masing" gunakan: agent none diawalnya
-//terus nanti tinggal panggil aja masing-masing agentnya per stage
+//agent adalah node/vm. kita jalankan script ini di node yang mana
+//kita bisa atur agent/nodenya di: manage jenkins > node > buat node baru. kita bisa tambahkan banyak node
+//terus kita bisa tentukan setiap stage dijalankan di AGENT yang mana dengan syarat diurutan awal kita tentukan: AGENT NONE
+//nanti baru disetiap stages stage kita bisa tambahkan dibawahnya agent
+//jadi urutannya nanti, setiap stage harus ada agent, dan tentukan stagenya dijalankan di agent yg mana
+
+//didalam stage kita juga bisa membuat stages dengan catatan TIDAK BOLEH ADA STEPS didalam stage
+//urutannya wajib: stage dibawahnya stages, stages dibawahnya stage, stage dibawahnya steps, dan steps dibawahnya command
+
+//urutan pipeline groovy, yaitu:
+//level 1: pipeline
+//level 2, ada 3 jenis yaitu: 1. kode agent (WAJIB), 2. kode fungsi, dan 3. kode deploy
+//level 2 kode agent seperti: dibawah pipeline ada AGENT NONE (WAJIB)
+//
+//level 2 kode fungsi seperti: 
+//fungsi parameters, fungsi triggers/cronjob, fungsi options, dan fungsi post
+//
+//level 2 kode deploy seperti: stages stage agent, DAN stages stage agent stages stage (fungsi ini tanpa steps ya)
 
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "ini paramater string")
