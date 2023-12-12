@@ -226,7 +226,13 @@ pipeline {
             }
 
             steps {
-                echo("jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK")
+                withCredentials([usernamePassword(
+                    credentialsId: "secret-asilitonga"
+                    usernameVariable: "USER"
+                    passwordVariable: "PASSWORD" 
+                )]) {
+                    sh ('echo "Release it with -u $USER -p $PASSWORD" > "release.txt"')
+                }
             }
         }
     }
