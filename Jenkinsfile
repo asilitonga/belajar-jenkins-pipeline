@@ -39,7 +39,6 @@ pipeline {
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.PASSWORDNYA}"
             }
-        }
 
             stages {
                 stage ("Parameter test 1") {
@@ -53,6 +52,7 @@ pipeline {
                     }
                 }
             }
+        }
               
 //1
         stage("Prepare") {
