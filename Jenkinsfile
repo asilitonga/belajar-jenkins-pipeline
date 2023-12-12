@@ -110,6 +110,12 @@ pipeline {
 
 //4
         stage("Deploy") {
+            input {
+                message "Can we deploy?"
+                ok "yes, of course"
+                submitter "asilitonga, papajenkins"
+            }
+
             agent {
                 node {
                     label "linux && java11"
