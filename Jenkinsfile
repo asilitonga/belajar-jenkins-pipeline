@@ -115,9 +115,9 @@ pipeline {
                 ok "yes, of course"
                 submitter "asilitonga, papajenkins"
             
-            parameters {
-                choice(name: "pilihan", choices['Build', 'Release', 'Deploy'], description: "deploy gak?"
-            }
+                parameters {
+                    choice(name: "pilihan", choices['DEV', 'QA', 'PROD'], description: "deploy gak?")
+                }
             }
 
             agent {
