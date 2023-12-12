@@ -127,8 +127,7 @@ pipeline {
             }
 
             steps {
-                echo ("Start Deploy")
-                echo ("Finish Deploy")
+                echo ("Deploy ke ${pilihan}")
             }
         }
     }
