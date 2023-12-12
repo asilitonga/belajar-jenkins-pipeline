@@ -130,6 +130,25 @@ pipeline {
                 echo ("Deploy ke ${pilihan}")
             }
         }
+
+    
+//5
+        stage("Release") {
+            when {
+                expressions {
+                    return params.DEPLOY
+                }
+            }
+
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            steps {
+                echo "jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK"
+            }
+            }
+        }
     }
 
 //ini adalah script fokus pada fungsi
