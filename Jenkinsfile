@@ -32,6 +32,14 @@ pipeline {
                     label "linux && java11"
                 }
             }
+            steps {
+                echo "string:      ${params.NAME}"
+                echo "text:        ${params.DESCRIPTION}"
+                echo "boolean:     ${params.DEPLOY}"
+                echo "choice:      ${params.SOCIAL_MEDIA}"
+                echo "password:    ${params.PASSWORDNYA}"
+            }
+        }
 
             stages {
                 stage ("Parameter test 1") {
@@ -45,23 +53,7 @@ pipeline {
                     }
                 }
             }
-
-
-            stage("Parameter") {
-                agent {
-                    node {
-                        label "linux && java11"
-                    }
-                }
-            steps {
-                echo "string:      ${params.NAME}"
-                echo "text:        ${params.DESCRIPTION}"
-                echo "boolean:     ${params.DEPLOY}"
-                echo "choice:      ${params.SOCIAL_MEDIA}"
-                echo "password:    ${params.PASSWORDNYA}"
-            }
-        }
-
+              
 //1
         stage("Prepare") {
             //buat credential dgn env
