@@ -145,9 +145,9 @@ pipeline {
                     label "linux && java11"
                 }
             }
-            
+
             steps {
-                echo "jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK"
+                echo ("jika bernilai TRUE/koddingnya bisa jalan artinya scriptnya OK")
             }
         }
     }
