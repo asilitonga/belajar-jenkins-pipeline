@@ -114,6 +114,10 @@ pipeline {
                 message "Can we deploy?"
                 ok "yes, of course"
                 submitter "asilitonga, papajenkins"
+            
+            parameters {
+                choice(name: "pilihan", choices['Build', 'Release', 'Deploy'], description: "deploy gak?"
+            }
             }
 
             agent {
