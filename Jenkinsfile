@@ -46,25 +46,25 @@ pipeline {
                 axes {
                     //axis 1
                     axis {
-                        name: "OS"
-                        values: "Windows", "Linux", "Mac"
+                        name "OS"
+                        values "windows", "linux", "mac"
                     }
                     //axis 2
                     axis {
-                        name: "TypeOS"
-                        values: "32", "64"
+                        name "TypeOS"
+                        values "32", "64"
                     }
                 }
             
                 excludes {
                     exclude {
                         axis {
-                            name: "OS"
-                            values: "mac"
+                            name "OS"
+                            values "mac"
                         }
                         axis {
-                            name: "TypeOS"
-                            values: "32"
+                            name "TypeOS"
+                            values "32"
                         }
                     }
                 }
@@ -76,7 +76,7 @@ pipeline {
                             }
                         }
                         steps {
-                            echo ("Running OS: ${OS} ${TypeOS}")
+                            echo ("Running OS ${OS} ${TypeOS}")
                         }  
                     }
                 }
