@@ -41,6 +41,49 @@ pipeline {
 //buat parameter choice
     stages {
 
+        stage ("Membuat Fungsi Matrix Paralel Bersamaan") {
+            matrix {
+                axes {
+                    //axis 1
+                    axis {
+                        name: "OS"
+                        values: "Windows", "Linux", "Mac"
+                    }
+                    //axis 2
+                    axis {
+                        name: "TypeOS"
+                        values: "32", "64"
+                    }
+                }
+            
+                excludes {
+                    exclude {
+                        axis {
+                            name: "OS"
+                            values: "mac"
+                        }
+                        axis {
+                            name: "TypeOS"
+                            values: "32"
+                        }
+                    }
+                }
+                stages {
+                    stage ("Panggil Fungsi Matrix Paralelnya") {
+                        agent {
+                            node {
+                                label "linux && java11"
+                            }
+                        }
+                        steps {
+                            echo ("Running OS: ${OS} ${TypeOS}")
+                        }  
+                    }
+                }
+            }
+        }
+//tutup
+
         stage ("Preparation") {
             agent {
                 label "linux && java11"
