@@ -135,7 +135,7 @@ pipeline {
 //5
         stage("Release") {
             when {
-                expressions {
+                expression {
                     return params.DEPLOY
                 }
             }
