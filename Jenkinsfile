@@ -40,6 +40,20 @@ pipeline {
                 echo "choice:      ${params.SOCIAL_MEDIA}"
                 echo "password:    ${params.PASSWORDNYA}"
             }
+
+            stages {
+                stage ("Parameter test 1") {
+                    steps {
+                        echo ("ini adalah test 1")
+                    }
+                }
+
+                stage ("Parameter test 2") {
+                    steps {
+                        echo ("ini adalah test 2")
+                    }
+                }
+            }
         }
 
 //1
