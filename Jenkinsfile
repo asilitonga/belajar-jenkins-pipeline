@@ -170,3 +170,4 @@ pipeline {
             echo "ini wajib dijalankan"
         }
     }
+}
