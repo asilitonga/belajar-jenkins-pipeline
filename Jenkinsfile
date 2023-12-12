@@ -16,10 +16,10 @@ pipeline {
         //pollSCM("*/5 * * * *")
     //}
 
-    //menjalankan pipeline dengan 1 agent saja dengan jeda 40 detik
+    //menjalankan pipeline dengan 1 agent saja dengan jeda 50 detik
     options {
         disableConcurrentBuilds()
-        timeout(time: 10, unit: 'MINUTES')
+        timeout(time: 50, unit: 'SECONDS')
     }
 
 //buat parameter choice
