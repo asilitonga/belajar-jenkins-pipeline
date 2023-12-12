@@ -24,26 +24,35 @@ pipeline {
 
 //buat parameter choice
     stages {
-        stages {
-            stage ("Parameter test 1") {
-                steps {
-                    echo ("ini adalah test 1")
-                }
-            }
-            stage ("Parameter test 1") {
-                steps {
-                    echo ("ini adalah test 1")
-                }
-            }
-        }
-              
+        
+        //done        
         stage("Parameter") {
             agent {
                 node {
                     label "linux && java11"
                 }
             }
-        
+
+            stages {
+                stage ("Parameter test 1") {
+                    steps {
+                        echo ("ini adalah test 1")
+                    }
+                }
+                stage ("Parameter test 2") {
+                    steps {
+                        echo ("ini adalah test 2")
+                    }
+                }
+            }
+
+
+            stage("Parameter") {
+                agent {
+                    node {
+                        label "linux && java11"
+                    }
+                }
             steps {
                 echo "string:      ${params.NAME}"
                 echo "text:        ${params.DESCRIPTION}"
@@ -74,7 +83,6 @@ pipeline {
                 sh('echo "Passwordnya: $APP_PSW" > "rahasia.txt"')
             }
         }
-
 
 
 //2
